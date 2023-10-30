@@ -33,7 +33,7 @@
                     <navigationItem key="navigationItem" id="Q9v-1c-Ovy">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="tPa-a8-rkj">
                             <connections>
-                                <segue destination="0vw-uw-qNX" kind="show" id="A1O-MR-lkz"/>
+                                <segue destination="0vw-uw-qNX" kind="show" identifier="juegoSegue" id="A1O-MR-lkz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -65,25 +65,40 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZf-tX-DEx">
-                                <rect key="frame" x="154" y="359" width="85" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZf-tX-DEx">
+                                <rect key="frame" x="154" y="608" width="84.666666666666657" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Agregar"/>
                                 <connections>
                                     <action selector="agregarTapped:" destination="0vw-uw-qNX" eventType="touchUpInside" id="lpt-GI-umD"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gql-c7-6Ff">
+                                <rect key="frame" x="36" y="357" width="320" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LE6-p9-kd3">
+                                <rect key="frame" x="154" y="659" width="84" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Eliminar"/>
+                                <connections>
+                                    <action selector="eliminarTapped:" destination="0vw-uw-qNX" eventType="touchUpInside" id="R8z-ro-AEu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wEl-nV-OIm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="OZf-tX-DEx" firstAttribute="top" secondItem="Pq4-mC-iGz" secondAttribute="bottom" constant="20" id="86l-zF-4bK"/>
+                            <constraint firstItem="OZf-tX-DEx" firstAttribute="centerX" secondItem="zGb-2P-Phd" secondAttribute="centerX" id="3zW-bB-ghO"/>
                             <constraint firstItem="Pq4-mC-iGz" firstAttribute="top" secondItem="maB-Mn-dNd" secondAttribute="bottom" constant="20" id="NK3-lw-n2J"/>
+                            <constraint firstItem="OZf-tX-DEx" firstAttribute="top" secondItem="Gql-c7-6Ff" secondAttribute="bottom" constant="20" id="eHw-HH-sSI"/>
                             <constraint firstItem="maB-Mn-dNd" firstAttribute="centerX" secondItem="zGb-2P-Phd" secondAttribute="centerX" id="hT2-hd-6Gw"/>
-                            <constraint firstItem="OZf-tX-DEx" firstAttribute="centerX" secondItem="zGb-2P-Phd" secondAttribute="centerX" id="ngO-oc-6qP"/>
+                            <constraint firstItem="LE6-p9-kd3" firstAttribute="top" secondItem="OZf-tX-DEx" secondAttribute="bottom" constant="20" id="nMH-jU-ccd"/>
                             <constraint firstItem="Pq4-mC-iGz" firstAttribute="width" secondItem="maB-Mn-dNd" secondAttribute="width" multiplier="0.114286" constant="248" id="q1R-lR-Imq"/>
                             <constraint firstItem="Pq4-mC-iGz" firstAttribute="centerX" secondItem="zGb-2P-Phd" secondAttribute="centerX" id="r6J-u5-Q7E"/>
+                            <constraint firstItem="LE6-p9-kd3" firstAttribute="centerX" secondItem="zGb-2P-Phd" secondAttribute="centerX" id="rD4-dm-VBN"/>
                             <constraint firstItem="maB-Mn-dNd" firstAttribute="top" secondItem="wEl-nV-OIm" secondAttribute="top" constant="32" id="uZP-IP-IVT"/>
+                            <constraint firstItem="Gql-c7-6Ff" firstAttribute="top" secondItem="Pq4-mC-iGz" secondAttribute="bottom" constant="30" id="wUa-ui-qIT"/>
+                            <constraint firstItem="Gql-c7-6Ff" firstAttribute="centerX" secondItem="zGb-2P-Phd" secondAttribute="centerX" id="ysN-IA-1dI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="63U-6R-Pit">
@@ -102,6 +117,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="JuegoImageView" destination="maB-Mn-dNd" id="4hR-zj-KCs"/>
+                        <outlet property="agregarActualizarBoton" destination="OZf-tX-DEx" id="aZc-oU-omL"/>
+                        <outlet property="categoriaPickerView" destination="Gql-c7-6Ff" id="KXb-F4-M0m"/>
+                        <outlet property="eliminarBoton" destination="LE6-p9-kd3" id="D6k-e9-Kfa"/>
                         <outlet property="tituloTextField" destination="Pq4-mC-iGz" id="SPD-hf-jmz"/>
                     </connections>
                 </viewController>
